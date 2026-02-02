@@ -6,7 +6,8 @@ const mongoose = require('mongoose')
 const express = require('express')
 // Bring in Morgan  (logger)
 const morgan = require('morgan')
-const petsController = require("./controllers/pet.controller")
+// Bring in our pet routes 
+const petsController = require('./controllers/pet.controller')
 
 const app = express()
 
@@ -37,7 +38,7 @@ app.get('/', (req, res) =>{
     })
 })
 
-app.use(petsController)
+app.use('/pets',petsController)
 
 app.listen(3000, ()=>console.log("Who let the dogs out on port 3000"))
 
